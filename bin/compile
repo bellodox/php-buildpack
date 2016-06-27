@@ -8,7 +8,6 @@ basedir="$( cd -P "$( dirname "$0" )" && pwd )"
 source "$basedir/../conf/buildpack.conf"
 source $basedir/common.sh
 source $basedir/../lib/composer
-source $basedir/../lib/nodejs
 source $basedir/../lib/newrelic
 
 if [ -n "$BUILDPACK_DEBUG" ]; then
@@ -258,7 +257,6 @@ for include in $PHP_INCLUDES; do
     cp "$BUILD_DIR/$include" "/app/vendor/php/etc/conf.d/"
 done
 
-install_node_deps "$BUILD_DIR"
 install_composer_deps "$BUILD_DIR"
 
 # Detect PHP framework
