@@ -20,10 +20,6 @@ function check_composer_json_and_lock() {
   if [ ! -f "$target/composer.json" ]; then
       return 0
   fi
-
-  if [ ! -f "$target/composer.lock" ]; then
-      error "composer.lock has not been found, please lock the dependencies of your project."
-  fi
 }
 
 function install_composer_deps() {
